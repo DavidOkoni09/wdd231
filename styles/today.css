@@ -27,6 +27,7 @@ header span {
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .hamburger::after {
     content: "\2630";
 }

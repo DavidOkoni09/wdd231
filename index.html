@@ -1,31 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Lesson</title>
+    <title>Site Plan</title>
+    <meta name="description" content="WDD231 | Web Frontend Development, Siteplan For final project">
+    <meta name="author" content="Agrinya Owokoni David">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/today.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <script src="scripts/today.js" defer></script>
+    <link rel="stylesheet" href="styles/site-plan.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/site-plan.js" defer></script>
+    <script src="scripts/course.js" defer></script>
 </head>
+
 <body>
-    <Header>
-        <img src="images/home.svg" alt="site logo" width="512" height="512">
-        <span>Davids Site</span>
-        <button id="ham-btn" class="hamburger"></button>
-    </Header>
-    <nav id="nav-bar" class="navigation">
+    <header>
+        <img src="images/bags-shopping.svg" alt="site logo" width="512" height="512">
+        <span>Calabar Chamber of Commerce</span>
+        <button id="btn" class="ham-btn">&#9776</button>
+    </header>
+    <nav id="nav" class="navigation">
         <ul>
-            <li><a href="#">News & Events</a></li>
-            <li class="current"><a href="#">Dedicated Temples</a></li>
-            <li><a href="#">Announced Temples</a></li>
-        </ul> 
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">Final</a></li>
+        </ul>
     </nav>
     <main>
-        <h1>Dedicated Temples</h1>
+        <h1>Home</h1>
+        <div class="grid-box">
+            <section class="about-box">
+                <h2>About Me</h2>
+                <div class="info">
+                    <p>My name is Owokoni and Okoni for short. I was born in Jos, Nigeria and I live in Calabar,
+                        Nigeria. I
+                        am a student currently at BYU Idaho and a local university over here UNICROSS. I would be
+                        completing my very first degree certificate in the next 6 weeekss aand hope to get jobs. I love
+                        reading and doing
+                        things relaated to tech. I love my family and quiet calm places. I hope to travel the world
+                        someday.</p>
+                </div>
+            </section>
+            <section>
+                <h2>Student Profile</h2>
+                <div class="info">
+                    <img src="images/profile.jpeg" alt="">
+                </div>
+            </section>
+            <section class="course-box">
+                <h2>Web Certificate Courses</h2>
+                <div class="course-btn">
+                    <button id="all-course" class="select">All Courses</button>
+                    <button id="wdd" class="select">WDD</button>
+                    <button id="cse" class="select">CSE</button>
+                </div>
+                <p id="credit"></p>
+                <div id="course" class="info">
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
+        <div class="social">
+            <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
+                    height="16"></a>
+            <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16"
+                    height="16"></a>
+            <a href="https://x.com"><img src="images/twitter-x.svg" alt="Twitter" width="16" height="16"></a>
+        </div>
+
+        <p>©<span id="currentyear"></span> • Agrinya Owokoni • Nigeria</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
+
 </html>
