@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
 }
 
@@ -56,15 +55,12 @@ header span {
     text-decoration: none;
     border-bottom: solid 1px #ddd;
     background-color: #58abc7;
+    border: none;
 }
 
 .navigation li{
     display: block;
     border-bottom: solid 1px #eee
-}
-
-.navigation a {
-    border: none;
 }
 
 .navigation a:hover {
