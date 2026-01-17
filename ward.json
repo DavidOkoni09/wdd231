@@ -1,0 +1,19 @@
+{
+    "family-name": "Agrinya",
+    "date": "January 2nd",
+    "number": 5,
+    "visited": false,
+    "members": [
+        {
+        "given-name": "Alex",
+        "gender": "male",
+        "birthdate": "August 8th"
+        },
+        {
+            "given-name": "Cecile",
+            "gender": "female",
+            "birthdate": "September 23rd"
+        }
+    ]
+
+}

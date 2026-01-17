@@ -1,0 +1,41 @@
+@media only screen and (min-width: 550px) {
+
+    header,
+    main,
+    nav,
+    footer {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    header {
+        grid-template-columns: 44px auto;
+    }
+
+    .ham-btn {
+        display: none;
+    }
+
+    .biz {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin: 10px 0;
+    }
+
+    .navigation li {
+        border-bottom: none;
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #58abc7;
+        border-radius: 8px;
+    }
+
+    .navigation {
+        display: block;
+        border-bottom: solid 1px #eee;
+    }
+}
