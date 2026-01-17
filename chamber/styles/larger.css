@@ -20,7 +20,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
-        margin: 10px 0;
+        margin: 10px;
     }
 
     .navigation li {

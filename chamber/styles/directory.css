@@ -91,7 +91,7 @@ ul .active {
     gap: 10px;
 }
 
-.list div{
+.list div {
     display: flex;
     justify-content: space-between;
     align-items: center;
