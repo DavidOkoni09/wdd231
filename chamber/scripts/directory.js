@@ -48,7 +48,7 @@ function displayCompany(companies) {
         const card = document.createElement("div");
         card.classList.add("card")
 
-        const name = document.createElement("h2");
+        const name = document.createElement("p");
         const address = document.createElement("p");
         const phone = document.createElement("p");
         const mail = document.createElement("p");
@@ -65,8 +65,8 @@ function displayCompany(companies) {
         image.setAttribute('src', company.image);
         image.setAttribute('alt', `Image of ${company.company_name} logo`)
         image.setAttribute('loading', 'lazy')
-        image.setAttribute('width', '240')
-        image.setAttribute('height', '240')
+        image.setAttribute('width', '150')
+        image.setAttribute('height', 'auto')
 
         card.appendChild(image)
         card.appendChild(name)

@@ -12,15 +12,39 @@
         grid-template-columns: 44px auto;
     }
 
+    main {
+        margin-bottom: 20px;
+    }
+
     .ham-btn {
         display: none;
     }
 
-    .biz {
+    .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-        margin: 10px;
+    }
+
+    .list .card {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .list div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .card {
+        border: 1px solid gray;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #add8e6;
+        box-shadow: 4px 4px gray;
     }
 
     .navigation li {
@@ -37,5 +61,15 @@
     .navigation {
         display: block;
         border-bottom: solid 1px #eee;
+        width: 100%;
+    }
+
+    footer {
+        background-color: #58abc7;
+        padding: 1rem 10px;
+        border-radius: 8px;
+        line-height: 1px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
