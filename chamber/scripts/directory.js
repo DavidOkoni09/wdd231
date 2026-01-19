@@ -1,81 +1,67 @@
-const currentYear = new Date().getFullYear();
-document.getElementById("currentyear").innerHTML = currentYear;
+// Modify footer with current date and last modiified data
+document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-const lastModified = document.lastModified;
-document.getElementById("lastModified").innerHTML = `Last Modified: ${lastModified}`;
+// variables
+const hamburger = document.getElementById("hamburger");
+const navigation = document.getElementById("navigation");
+const grid = document.getElementById("grid");
+const list = document.getElementById("list");
 
-const navbutton = document.querySelector("#btn");
-const nav = document.querySelector("#nav");
-const cards = document.querySelector("#biz-container")
-const gridbutton = document.querySelector("#grid");
-const listbutton = document.querySelector("#list");
-
-gridbutton.addEventListener("click", () => {
-    cards.classList.add("grid");
-    cards.classList.remove("list");
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navigation.classList.toggle("open");
 });
 
-listbutton.addEventListener("click", () => {
-    cards.classList.add("list");
-    cards.classList.remove("grid");
-});
-
-
-
-navbutton.addEventListener("click", () => {
-    navbutton.classList.toggle("show");
-    nav.classList.toggle("show");
-    const isHam = navbutton.textContent === "\u2630";
-
-    if (isHam) {
-        navbutton.textContent = "\u2715";
-        navbutton.setAttribute("aria-expanded", "true");
-    } else {
-        navbutton.textContent = "\u2630";
-        navbutton.setAttribute("aria-expanded", "false");
-    }
-})
-
-async function getCompany() {
+async function getCompanyInfo() {
     const response = await fetch("data/members.json");
     const data = await response.json();
-
     displayCompany(data.companies);
 }
 
-function displayCompany(companies) {
-    companies.forEach(company => {
-        const card = document.createElement("div");
-        card.classList.add("card")
+getCompanyInfo();
 
-        const name = document.createElement("p");
-        const address = document.createElement("p");
-        const phone = document.createElement("p");
-        const mail = document.createElement("p");
+const displayCompany = (companies) => {
+    companies.forEach((company) => {
+        const cardBox = document.querySelector(".box");
+
+        const card = document.createElement("section");
         const image = document.createElement("img");
-        const level = document.createElement("p");
+        const title = document.createElement("p");
+        const address = document.createElement("p")
+        const website = document.createElement("a");
+        const phone = document.createElement("p");
 
-        name.textContent = `${company.company_name}`
-        address.textContent = `${company.company_address}`
+        image.setAttribute("src", company.image);
+        image.setAttribute("alt", `${company.company_name} logo`);
+        image.setAttribute("loading", "lazy");
+        image.setAttribute('width', '100');
+        image.setAttribute('height', '100');
+        title.textContent = `${company.company_name}`;
+        address.textContent = `${company.company_address}`;
+        website.setAttribute("href", company.website);
+        website.textContent = `${company.website}`;
+        phone.textContent = `${company.number}`;
 
-        level.textContent = `${company.membership_level.level_1}`
-        phone.innerHTML = `${company.number}`
-        mail.textContent = `${company.email}`
+        // Temporal check
+        grid.addEventListener("click", () => {
+            cardBox.classList.remove("flex");
+            card.classList.remove("list");
+        });
+        list.addEventListener("click", () => {
+            cardBox.classList.add("flex");
+            card.classList.add("list");
+        })
 
-        image.setAttribute('src', company.image);
-        image.setAttribute('alt', `Image of ${company.company_name} logo`)
-        image.setAttribute('loading', 'lazy')
-        image.setAttribute('width', '150')
-        image.setAttribute('height', 'auto')
 
-        card.appendChild(image)
-        card.appendChild(name)
-        card.appendChild(address)
-        card.appendChild(phone)
-        card.appendChild(mail)
 
-        cards.appendChild(card)
-    })
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(address);
+        card.appendChild(website);
+        card.appendChild(phone);
+
+        cardBox.appendChild(card);
+
+    });
 }
-
-getCompany();

@@ -22,36 +22,37 @@
 
 <body>
     <header>
-        <img src="images/bags-shopping.svg" alt="site logo" width="512" height="512">
-        <span>Calabar Chamber of Commerce</span>
-        <button id="btn" class="ham-btn">&#9776;</button>
-    </header>
+        <img src="images/bags-shopping.svg" alt="website-logo">
+        <p>Calabar Chamber of Commerce</p>
     
-    <nav id="nav" class="navigation">
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
+    
+    </header>
+
+    <nav class="navigation" id="navigation">
         <ul>
-            <a href="#">Home</a>
-            <a href="#">Join</a>
-            <a href="#" class="active">Directory</a>
-            <a href="#">Discovery</a>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Join</a></li>
+            <li class="active"><a href="#">Directory</a></li>
+            <li><a href="#">Discovery</a></li>
         </ul>
     </nav>
-
+    
     <main>
-
-        <h1>Calabar Chamber Of Commerce Members</h1>
-
-        <div class="container">
-            <div class="menu">
+        <h1>Calabar Chamber of Commerce Members</h1>
+    
+        <div class="container" id="container">
+            <div class="btn-container">
                 <button id="grid">Grid</button>
                 <button id="list">List</button>
             </div>
-            
-            <section id="biz-container" class="grid">
-            
+    
+            <section class="box">
+    
             </section>
+    
         </div>
-        
-
+    
     </main>
 
     <footer>
