@@ -188,13 +188,12 @@ button:hover {
     margin-bottom: 9px;
 }
 
-.box section p {
-    color: #000;
-}
+
 
 .box section p,
 .box section a {
     margin-bottom: 9px;
+    color: #000;
 }
 
 /* Business Directory */

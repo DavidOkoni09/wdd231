@@ -9,6 +9,10 @@ Brownish yellow - #f8ab38ff */
         --accent2: #eee;
     }
 
+    body {
+        background-color: var(--accent1);
+    }
+
     header,
     main,
     nav,
@@ -20,6 +24,7 @@ Brownish yellow - #f8ab38ff */
     header {
         grid-template-columns: 44px auto;
         padding: 1.4rem;
+        margin-bottom: 10px;
         /* display: flex; */
         /* flex-wrap: wrap; */
     }
@@ -47,7 +52,7 @@ Brownish yellow - #f8ab38ff */
     nav {
         display: block;
         border-bottom: solid 1px #eee;
-        width: 98%;
+        width: 100%;
         
     }
 
@@ -88,6 +93,7 @@ Brownish yellow - #f8ab38ff */
         text-align: left;
         padding: 0 3rem;
         column-gap: 10px;
+        border-radius: 8px;
     }
 
     .social {
