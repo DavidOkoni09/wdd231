@@ -6,9 +6,8 @@
             "number": "08036376275",
             "email": "laurasHairline@gmail.com",
             "website": "laurasHairline.com",
-            "image": "images/hairr.png",            
+            "image": "images/hairr.webp",
             "membership_level": "silver"
-
         },
         {
             "company_name": "Crunchies Fast Food",
@@ -16,7 +15,7 @@
             "number": "08012345678",
             "email": "crunchies@gmail.com",
             "website": "crunchiesfastfood.com",
-            "image": "images/crunch.png",            
+            "image": "images/crunch.webp",
             "membership_level": "gold"
         },
         {
@@ -25,7 +24,7 @@
             "number": "0700 700 9999",
             "email": "laurasHairline@gmail.com",
             "website": "www.dominos.ng/",
-            "image": "images/domino.png",
+            "image": "images/domino.webp",
             "membership_level": "member"
         },
         {
@@ -34,7 +33,7 @@
             "number": "0818 763 9073",
             "email": "laurasHairline@gmail.com",
             "website": "alyceice.com",
-            "image": "images/alice.png",
+            "image": "images/alice.webp",
             "membership_level": "member"
         },
         {
@@ -43,7 +42,7 @@
             "number": "09062083628",
             "email": "laurasHairline@gmail.com",
             "website": "www.slot.ng/",
-            "image": "images/slot.png",
+            "image": "images/slot.webp",
             "membership_level": "silver"
         },
         {
@@ -52,7 +51,7 @@
             "number": "02017008262",
             "email": "laurasHairline@gmail.com",
             "website": "www.wakanow.com/",
-            "image": "images/waka.png",            
+            "image": "images/waka.webp",
             "membership_level": "gold"
         },
         {
@@ -61,7 +60,7 @@
             "number": "09010756112",
             "email": "laurasHairline@gmail.com",
             "website": "laurasHairline.com",
-            "image": "images/crispy.png",
+            "image": "images/crispy.webp",
             "membership_level": "member"
         }
     ]
