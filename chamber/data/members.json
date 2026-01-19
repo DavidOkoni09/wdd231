@@ -15,7 +15,7 @@
             "company_address": "Ndidem Usang Iso street, Calabar",
             "number": "08012345678",
             "email": "crunchies@gmail.com",
-            "website": "https://crunchiesfastfood.com",
+            "website": "crunchiesfastfood.com",
             "image": "images/crunch.png",            
             "membership_level": "gold"
         },
@@ -24,7 +24,7 @@
             "company_address": "73 Ndidem Usang Iso Rd, Marian road, Leopad Town",
             "number": "0700 700 9999",
             "email": "laurasHairline@gmail.com",
-            "website": "https://www.dominos.ng/",
+            "website": "www.dominos.ng/",
             "image": "images/domino.png",
             "membership_level": "member"
         },
@@ -33,7 +33,7 @@
             "company_address": "40 Ndidem Usang Iso Rd, Big Qua Town,",
             "number": "0818 763 9073",
             "email": "laurasHairline@gmail.com",
-            "website": "https://alyceice.com",
+            "website": "alyceice.com",
             "image": "images/alice.png",
             "membership_level": "member"
         },
@@ -42,7 +42,7 @@
             "company_address": "18 Ndidem Usang Iso Rd, beside Lions Club Park, Calabar, Akim Qua Town",
             "number": "09062083628",
             "email": "laurasHairline@gmail.com",
-            "website": "http://www.slot.ng/",
+            "website": "www.slot.ng/",
             "image": "images/slot.png",
             "membership_level": "silver"
         },
@@ -51,7 +51,7 @@
             "company_address": "Naks Hotel & Tower, 106 Ndidem Usang Iso Rd, Atekong",
             "number": "02017008262",
             "email": "laurasHairline@gmail.com",
-            "website": "https://www.wakanow.com/",
+            "website": "www.wakanow.com/",
             "image": "images/waka.png",            
             "membership_level": "gold"
         },
