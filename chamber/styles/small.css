@@ -79,9 +79,9 @@ nav {
     display: none;
 }
 
-nav.open {
+/* nav.open {
     display: block;
-}
+} */
 
 nav ul {
     list-style: none;
