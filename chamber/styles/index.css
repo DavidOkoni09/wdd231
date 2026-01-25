@@ -129,6 +129,8 @@ nav li .active {
 
 .hero {
     position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: var(--accent2);
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -138,7 +140,7 @@ nav li .active {
 .hero img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     opacity: 0.8;
@@ -192,6 +194,18 @@ button {
     background-color: var(--primary-color);
     margin-top: 10px;
     display: inline-block;
+    padding: 0.7rem 1.5rem;
+    color: #000;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #eee;
+    color: blue;
 }
 
 button a {
