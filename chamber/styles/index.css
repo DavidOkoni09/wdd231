@@ -232,6 +232,7 @@ button:hover {
     justify-content: center;
     gap: 1.5rem;
     padding: 1rem;
+    max-width: 900px;
 }
 
 .box section {
@@ -242,12 +243,13 @@ button:hover {
     align-items: center;
     padding: 1rem;
     border-radius: 8px;
-    flex: 1 1 300px;
-    max-width: 350px;
+    flex: 1 1 200px;
+    max-width: 200px;
+    font-size: 15px;
 }
 
 .box section img {
-    width: 100px;
+    width: 70px;
     height: auto;
     border-radius: 12px;
     margin-bottom: 9px;
