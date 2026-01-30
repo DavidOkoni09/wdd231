@@ -1,5 +1,7 @@
 const btn1 = document.querySelector("#all-course");
 const creditDisplay = document.querySelector("#credit");
+const dialogBox = document.querySelector("#course-details");
+const courseDetails = document.querySelector("#course-info")
 
 const courses = [
     {
@@ -91,19 +93,25 @@ function displayCourses(courseArray) {
     creditDisplay.textContent = `Total number of credits: ${totalCredits}`;
 
     courseArray.forEach(course => {
-        const card = document.createElement("div");
-        card.classList.add("course-card");
+        const card = document.createElement("button");
+        card.classList.add("course-card");    
 
         // Use a Ternary Operator for cleaner code
         const statusIcon = course.completed ? "✔️" : "";
-
+        
         card.innerHTML = `
-            <h3>${statusIcon}${course.subject} ${course.number}</h3>
+            <h3>${statusIcon}${course.subject} ${course.number}<h3>
         `;
-
+        
         displayCourse.appendChild(card);
+
+        card.addEventListener('click', () => {
+            displayCourseDetails(course);
+        })
     });
 }
+
+
 
 btn1.addEventListener("click", () => {
     displayCourses(courses);
@@ -118,6 +126,24 @@ function filterByCategory(category) {
     }
 }
 
+function displayCourseDetails(course) {
+    courseDetails.innerHTML = '';
+    courseDetails.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+    dialogBox.showModal();
+
+    const closeModal = document.querySelector("#closeModal");
+    closeModal.addEventListener("click", () => {
+        dialogBox.close();
+    });
+}
 
 document.getElementById("all-course").addEventListener("click", () => filterByCategory('all'));
 document.getElementById("wdd").addEventListener("click", () => filterByCategory('WDD'));
