@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us Page | Calabar Chamber of Commerce</title>
+    <meta name="description"
+        content="Join page for the Calabar Chamber of Commerce featuring a form and a detail for the membersip levels. | WDD231">
+    <meta name="author" content="Agrinya Owokoni David">
+    <meta property="og:description"
+        content="Join page for the Calabar Chamber of Commerce featuring a form and a detail for the membersip levels. | WDD231">
+    <meta property="og:author" content="Agrinya Owokoni David">
+    <meta property="og:title" content="Join Us Page | Calabar Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://davidokoni09.github.io/wdd231/chamber/images/main.jpg">
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/chamber/join.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/join-large.css">
+
+    <script src="scripts/join.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="images/bags-shopping.svg" alt="website-logo" loading="lazy">
+        <p>Calabar Chamber of Commerce</p>
+
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
+
+    </header>
+
+    <nav class="navigation" id="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="join.html">Join</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="#">Discovery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Join Us</h1>
+        <p>Welcome aboard partner!!!</p>
+
+        <div class="main-info">
+            <form action="thankyou.html" method="get">
+                <h2>Membership Application Form</h2>
+
+                <label>First Name:
+                    <input type="text" name="fname" title="Applicant's First Name" required autocomplete="given-name">
+                </label>
+            
+                <label>Last Name:
+                    <input type="text" name="lname" title="Applicant's Last Name" required autocomplete="family-name">
+                </label>
+            
+                <label>Organizational Title:
+                    <input type="text" name="org-title"
+                        title="Your title within the organization (min 7 characters, letters/hyphens/spaces only)"
+                        autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" required>
+                </label>
+            
+                <label>Email Address:
+                    <input type="email" name="email" title="Applicant's Email" required autocomplete="email"
+                        placeholder="example@domain.com">
+                </label>
+            
+                <label>Mobile Phone Number:
+                    <input type="tel" name="phone" title="Applicant's Mobile Number" required autocomplete="tel">
+                </label>
+            
+                <label>Business/Organization Name:
+                    <input type="text" name="organization" title="Name of your Business or Organization" required
+                        autocomplete="organization">
+                </label>
+            
+                <label>Membership Level:
+                    <select name="membership-level" required title="Select your membership level">
+                        <option value="" disabled selected>Select a level...</option>
+                        <option value="np">NP Membership (Non-profit, no fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+            
+                <label>Business Description:
+                    <textarea name="description" title="Description of your business or organization" rows="4"></textarea>
+                </label>
+            
+                <input type="hidden" name="timestamp" id="timestamp">
+            
+                <input type="submit" value="Join the Chamber">
+            </form>
+            
+            <section class="membership-info">
+                <h2>Membership Levels</h2>
+                <div class="membership-cards">
+                    <div class="card">
+                        <h3>NP Membership</h3>
+                        <button class="open-modal" data-target="#mod-np">Learn More</button>
+                    </div>
+            
+                    <div class="card">
+                        <h3>Bronze Membership</h3>
+                        <button class="open-modal" data-target="#mod-bronze">Learn More</button>
+                    </div>
+            
+                    <div class="card">
+                        <h3>Silver Membership</h3>
+                        <button class="open-modal" data-target="#mod-silver">Learn More</button>
+                    </div>
+            
+                    <div class="card">
+                        <h3>Gold Membership</h3>
+                        <button class="open-modal" data-target="#mod-gold">Learn More</button>
+                    </div>
+                </div>
+            
+                <dialog id="mod-np" class="modal">
+                    <h2>Non-Profit Benefits</h2>
+                    <p>Cost: Free</p>
+                    <ul>
+                        <li>Listing in Chamber Directory</li>
+                        <li>Access to community networking events</li>
+                        <li>Monthly newsletter subscription</li>
+                    </ul>
+                    <button class="close-modal">Close</button>
+                </dialog>
+            
+                <dialog id="mod-bronze" class="modal">
+                    <h2>Bronze Benefits</h2>
+                    <p>Cost: ₦10,000/mo</p>
+                    <ul>
+                        <li>All NP benefits</li>
+                        <li>20% discount on event tickets</li>
+                        <li>Social media mentions</li>
+                    </ul>
+                    <button class="close-modal">Close</button>
+                </dialog>
+            
+                <dialog id="mod-silver" class="modal">
+                    <h2>Silver Benefits</h2>
+                    <p>Cost: ₦30,000/mo</p>
+                    <ul>
+                        <li>All Bronze benefits</li>
+                        <li>Spotlight position on website</li>
+                        <li>Free training workshops</li>
+                    </ul>
+                    <button class="close-modal">Close</button>
+                </dialog>
+            
+                <dialog id="mod-gold" class="modal">
+                    <h2>Gold Benefits</h2>
+                    <p>Cost: ₦60,000/mo</p>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>Premium Home Page advertising</li>
+                        <li>V.I.P. access to special events</li>
+                    </ul>
+                    <button class="close-modal">Close</button>
+                </dialog>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+
+        <div>
+            <p>Calabar Chamber of Commerce</p>
+            <p>info@calabarcc.org</p>
+            <p>+234 9166648457</p>
+        </div>
+
+        <div class="social">
+            <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
+                    height="16"></a>
+
+            <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16"
+                    height="16"></a>
+
+            <a href="https://x.com"><img src="images/twitter-x.svg" alt="Twitter" width="16" height="16"></a>
+        </div>
+
+        <div class="details">
+            <p>WDD 231 Class Project</p>
+            <p>©<span id="currentyear"></span> • Agrinya Owokoni David</p>
+            <p id="lastModified"></p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

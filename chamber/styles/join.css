@@ -1,0 +1,438 @@
+
+:root {
+    --primary-color: #58abc7;
+    --secondary-color: #add8e6;
+    --accent1: #ddd;
+    --accent2: #eee;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* background-color: var(--primary-color); */
+    color: #000;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 44px auto 44px;
+    align-items: center;
+    padding: 1rem;
+    /* background-color: var(--accent1); */
+    background-color: white;
+}
+
+header p {
+    display: flex;
+    margin-left: 5px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+header img {
+    width: 44px;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fafafa;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.hamburger span,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #1f1f1f;
+    margin: 5px 0;
+    transition: 0.5s ease;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span {
+    opacity: 0;
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: .8rem 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: 0.5s ease;
+    border: none;
+    border-bottom: solid 1px #ddd;
+}
+
+nav li {
+    display: block;
+    border-bottom: solid 1px #eee;
+    background-color: var(--primary-color);
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+ul .active {
+    background-color: var(--secondary-color);
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* place-items: left; */
+    margin-top: 1rem;
+    gap: 30px;
+}
+
+nav li .active {
+    color: var(--secondary-color);
+}
+
+main {
+    padding: 2rem 1rem;
+    background-color: var(--accent1);
+    color: var(--primary-color);
+}
+
+
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin-top: 0.4rem;
+    padding: 0.8rem;
+
+    border: 1px solid #ccc;
+    border-left: 6px solid #000;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #246b39;
+    /* Or your primary theme color */
+    background-color: #fdfdfd;
+}
+
+/* Styling the Submit Button */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+
+    background-color: #24416b;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.membership-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 1. Define the Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Apply to the Cards */
+.card {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0 50px 0 50px;
+    background-color: #f8f8f8;
+
+
+    /* Animation Properties */
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    /* Keeps them invisible before they slide in */
+}
+
+/* 3. Stagger the entry (The "Waterfall" Effect) */
+/* This makes the cards appear one after another instead of all at once */
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+@keyframes goldGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+}
+
+.card:nth-child(2) {
+    border: 2px solid #CD7F32;
+    animation: fadeInUp 0.8s ease-out 0.8s backwards,
+        goldGlow 3s ease-in-out infinite;
+    /* Runs after the first animation */
+}
+
+.card:nth-child(3) {
+    border: 2px solid #C0C0C0;
+    animation: fadeInUp 0.8s ease-out 0.8s backwards,
+        goldGlow 3s ease-in-out infinite;
+    /* Runs after the first animation */
+}
+
+.card:nth-child(4) {
+    border: 2px solid #ffd700;
+    animation: fadeInUp 0.8s ease-out 0.8s backwards,
+        goldGlow 3s ease-in-out infinite;
+    /* Runs after the first animation */
+}
+
+main p {
+    color: #1f1f1f;
+}
+
+h1 {
+    color: #000;
+}
+
+h2 {
+    text-align: center;
+    color: #000;
+    margin: 70px 0 10px 0;
+}
+
+h3 {
+    color: #24416b;
+}
+
+.btn-container {
+    display: flex;
+    column-gap: 1rem;
+}
+
+button {
+    border: none;
+    padding: .7rem;
+    font-size: 14px;
+    border-radius: 9px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.modal {
+    padding: 2.5rem;
+    border: none;
+    border-radius: 8px;
+    max-width: 300px;
+    width: 90%;
+    margin: 2rem auto;
+    /* Responsive width for mobile */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    /* Using the design from your form screenshot */
+    border-left: 10px solid #24416b;
+    font-family: 'Merriweather', serif;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #24416b;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal p {
+    font-weight: bold;
+    color: #444;
+}
+
+.modal ul {
+    margin: 1.5rem 0;
+    padding-left: 1.2rem;
+    line-height: 1.6;
+}
+
+.modal li {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling the Close Button inside the Modal */
+.close-modal {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.close-modal:hover {
+    background-color: #d00000;
+    color: white;
+}
+
+footer {
+    /* background-color: var(--accent1); */
+    background-color: var(--primary-color);
+    color: black;
+    text-align: left;
+    padding: 2rem 1rem;
+}
+
+footer img {
+    width: 22px;
+    height: 22px;
+}
+
+.social {
+    display: flex;
+    justify-content: left;
+    column-gap: 8px;
+    padding: .8rem;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
+}
+
+.social a:hover {
+    background-color: #ddd;
+}
+
+.copy {
+    padding-top: .8rem;
+}
+
+footer p {
+    padding: .5rem;
+    font-weight: bold;
+}

@@ -4,93 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calabar Chamber of Commerce Directory</title>
-    <meta name="description" content="Page listing the local businesses in the area and other organisations that belong to the chhamber of commerce. WDD231">
+    <title>Thank You - Calabar Chamber of Commerce</title>
+    <meta name="description" content="Thanks info page for the Calabar Chamber of Commerce the join details from join form. | WDD231 | WDD231">
     <meta name="author" content="Agrinya Owokoni David">
     <meta property="og:description"
-        content="Page listing the local businesses in the area and other organisations that belong to the chhamber of commerce. WDD231">
+        content="Thanks info page for the Calabar Chamber of Commerce the join details from join form. | WDD231">
     <meta property="og:author" content="Agrinya Owokoni David">
-    <meta property="og:title" content="Calabar Chamber of Commerce Directory">
+    <meta property="og:title" content="Calabar Chamber of Commerce Thanks Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://davidokoni09.github.io/wdd231/chamber/images/main.jpg">
-    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/chamber/directory.html">
-
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/chamber/thankyou.html">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
-
+    
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <link rel="preload" href="images/bags-shopping.svg" as="image">
-    <link rel="preload" href="data/members.json" as="fetch" crossorigin>
+    <link rel="stylesheet" href="styles/thankyou.css">
+    <link rel="stylesheet" href="styles/thankslarge.css">
 
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+
 </head>
 
 <body>
     <header>
-        <img src="images/bags-shopping.svg" alt="website-logo">
+        <img src="images/bags-shopping.svg" alt="website-logo" loading="lazy">
         <p>Calabar Chamber of Commerce</p>
     
         <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
     
     </header>
-
+    
     <nav class="navigation" id="navigation">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="join.html">Join</a></li>
-            <li class="active"><a href="#">Directory</a></li>
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="join.html">Join</a></li>
+            <li><a href="directory.html">Directory</a></li>
             <li><a href="#">Discovery</a></li>
         </ul>
     </nav>
-    
+
     <main>
-        <h1>Calabar Chamber of Commerce Members</h1>
-    
-        <div class="container" id="container">
-            <div class="btn-container">
-                <button id="grid">Grid</button>
-                <button id="list">List</button>
+        <section class="thank-you-container">
+            <h1>Application Received!</h1>
+            <p>Thank you for applying to join the Chamber. We have received the following information:</p>
+
+            <div id="results" class="results-box">
             </div>
-    
-            <section class="box">
-    
-            </section>
-    
-        </div>
-    
+
+            <a href="index.html" class="back-home">Return Home</a>
+        </section>
     </main>
 
     <footer>
-
+    
         <div>
             <p>Calabar Chamber of Commerce</p>
             <p>info@calabarcc.org</p>
             <p>+234 9166648457</p>
         </div>
-
+    
         <div class="social">
             <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
                     height="16"></a>
-
-            <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16"
-                    height="16"></a>
-
+    
+            <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+    
             <a href="https://x.com"><img src="images/twitter-x.svg" alt="Twitter" width="16" height="16"></a>
         </div>
-
+    
         <div class="details">
             <p>WDD 231 Class Project</p>
             <p>©<span id="currentyear"></span> • Agrinya Owokoni David</p>
             <p id="lastModified"></p>
         </div>
-
+    
     </footer>
+
 </body>
 
 </html>
