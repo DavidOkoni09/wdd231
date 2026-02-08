@@ -13,13 +13,6 @@ Brownish yellow - #f8ab38ff */
         background-color: var(--accent1);
     }
 
-    header,
-    main,
-    nav,
-    footer {
-        max-width: 900px;
-        margin: 0 auto;
-    }
 
     header {
         grid-template-columns: 44px auto;
@@ -81,20 +74,9 @@ Brownish yellow - #f8ab38ff */
     }
 
     /* Business Directory */
-    .box section.list p,
-    .box section.list a {
-        max-width: 12rem;
-        width: 100%;
-        text-align: left;
-        margin-bottom: 0;
-    }
-
-    .box section p,
-    .box section a {
-        max-width: 12rem;
-        width: 100%;
-        text-align: left;
-        margin-bottom: 0;
+    .box {
+        display: flex;
+        justify-content: center;
     }
 
     footer {

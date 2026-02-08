@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calabar Chamber of Commerce Home</title>
-    <meta name="description" content="Home page for the Calabar Chamber of Commerce featuring a call to action | WDD231">
+    <title>Discover Calabar | Chamber of Commerce</title>
+    <meta name="description"
+        content="Discover page listing areas of interest in the locality, their descriptions and sddresses. | WDD231">
     <meta name="author" content="Agrinya Owokoni David">
-    <meta property="og:description" content="Home page for the Calabar Chamber of Commerce featuring a call to action | WDD231">
+    <meta property="og:description"
+        content="Discover page listing areas of interest in the locality, their descriptions and addresses. | WDD231">
     <meta property="og:author" content="Agrinya Owokoni David">
-    <meta property="og:title" content="Calabar Chamber of Commerce Home">
+    <meta property="og:title" content="Discover Calabar | Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://davidokoni09.github.io/wdd231/chamber/images/bags-shopping.svg">
-    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/chamber/discover.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +24,11 @@
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/index-large.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <link rel="stylesheet" href="styles/discover-medium.css">
+    <link rel="stylesheet" href="styles/discover-large.css">
 
-    <script src="scripts/home.js" defer></script>
+    <script type="module" src="scripts/discover.js"></script>
 
 </head>
 
@@ -40,54 +43,32 @@
 
     <nav class="navigation" id="navigation">
         <ul>
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="join.html">Join</a></li>
             <li><a href="directory.html">Directory</a></li>
-            <li><a href="discover.html">Discovery</a></li>
+            <li class="active"><a href="discover.html">Discovery</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="hero">
-            <img src="images/hero.webp" alt="Calabar Business District" loading="lazy">
-            <div class="cta-box">
-                <p>Empowering Local Businesses in Calabar</p>
-                <a class="cta-btn" href="join.html">Join the Chamber</a>
-            </div>
+        <h1>Discover</h1>
+        <p>Sights to see!!!</p>
+
+        <div class="visitor-message">
+
         </div>
 
-        <h1>Home</h1>
-        <section class="info">
-            <div>
-                <h2>Events</h2>
-                <div class="events">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates voluptas nisi modi delectus
-                    nostrum aperiam tempore rerum doloremque hic est?
-                </div>
-            </div>
-
-            <section id="weather-section">
-                <div>
-                    <h2>Current Weather</h2>
-                    <div class="current-weather">
-                        <img id="weather-icon" src="images/favicon.ico" alt="weather placeholder" loading="lazy">
-                        <span id="current-temp"></span>
-                        <p id="weather-desc"></p>
-                    </div>
-                </div>
-                <div>
-                    <h2>Weather Forecast</h2>
-                    <div id="forecast">
-                    </div>
-                </div>
-            </section>
+        <section id="discover-grid">
 
         </section>
-        <h2>Businesses</h2>
-        <div class="box">
 
-        </div>
-
+        <dialog id="place-details">
+            <div class="dialog-content">
+                <h2 id="dialog-title"></h2>
+                <p id="dialog-description"></p>
+                <button id="close-dialog">Close</button>
+            </div>
+        </dialog>
     </main>
 
     <footer>

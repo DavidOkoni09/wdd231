@@ -13,13 +13,6 @@ Brownish yellow - #f8ab38ff */
         background-color: var(--accent1);
     }
 
-    header,
-    main,
-    nav,
-    footer {
-        max-width: 900px;
-        margin: 0 auto;
-    }
 
     header {
         grid-template-columns: 44px auto;

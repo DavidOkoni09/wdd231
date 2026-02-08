@@ -1,6 +1,4 @@
-/* Black - #000000ff
-Brownish yellow - #f8ab38ff */
-@media only screen and (min-width: 38rem) {
+@media only screen and (min-width: 64rem) {
 
     :root {
         --primary-color: #58abc7;
@@ -60,6 +58,22 @@ Brownish yellow - #f8ab38ff */
         margin: 0 0 10px 0;
     }
 
+    #discover-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card figure {
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .card img:hover {
+        transform: scale(1.1);
+        /* Zoom effect */
+        filter: brightness(1.1);
+        /* Brighten slightly */
+        cursor: pointer;
+    }
 
     footer {
         display: flex;
