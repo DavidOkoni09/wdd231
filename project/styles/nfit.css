@@ -186,10 +186,20 @@ nav li .active {
     font-family: Merrweather;
 }
 
+.cta-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
 .cta-group a {
     background-color: var(--accent);
     color: var(--bg);
-    padding: 12px 24px;
+    padding: 11px 12px;
+    min-width: 100px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
