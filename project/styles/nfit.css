@@ -1,0 +1,358 @@
+:root {
+    --primary: #4B0082;
+    --accent: #CCFF00;
+    --bg: #121212;
+    --card: #1E1E1E;
+    --text: #E0E0E0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 55px auto 55px;
+    background-color: var(--primary);
+    align-items: center;
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+}
+
+header div span {
+    display: flex;
+    justify-content: center;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header div p {
+    display: flex;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+header img {
+    width: 55px;
+    margin-right: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+    font-family: 'Montserrat';
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: #fafafa;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.hamburger span,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #fafafa;
+    margin: 5px 0;
+    transition: 0.5s ease;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span {
+    opacity: 0;
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: .4rem 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text);
+    transition: 0.5s ease;
+    border: none;
+    border-bottom: solid 1px #ddd;
+}
+
+nav li {
+    display: block;
+    border-bottom: solid 1px #eee;
+    background-color: var(--primary);
+}
+
+nav a:hover {
+    background-color: var(--card);
+}
+
+ul .active {
+    background-color: var(--primary);
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 30px;
+}
+
+nav li .active {
+    color: var(--bg);
+}
+
+/* The hidden state */
+.hidden {
+    display: none !important;
+    /* Forces it to hide */
+}
+
+/* Toggle button styling */
+.search-toggle-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+#search-toggle {
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#search-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Optional: Animation for when it appears */
+.search-container:not(.hidden) {
+    display: flex;
+    /* Or whatever your original display was */
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: linear-gradient(to bottom, var(--primary), var(--bg));
+}
+
+.highlight {
+    color: var(--accent);
+    font-family: Merrweather;
+}
+
+.cta-group a {
+    background-color: var(--accent);
+    color: var(--bg);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem;
+    background: var(--card);
+    margin: -20px 1rem 0 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Add hover effects for buttons */
+.cta-group a:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* DIALOG STYLING */
+
+/* Styling the modal itself */
+dialog {
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    background: #1E1E1E;
+    /* Matches your NFIT dark theme */
+    color: #E0E0E0;
+    max-width: 400px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the dimmed background */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    /* Adds a modern 'glass' effect */
+}
+
+dialog a {
+    background-color: #4B0082;
+    color: var(--text);
+    text-decoration: none;
+    padding: .5rem;
+    margin: .5rem;
+    font-weight: 600;
+    
+}
+
+dialog button {
+    background-color: var(--primary);
+    color: var(--text);
+    font-weight: 600;
+    padding: .5rem;
+    margin: .5rem;
+    font-size: 15px;
+    border: 0;
+    height: 38px;
+    cursor: pointer;
+}
+
+/* JOB SECTION */
+
+.job-card {
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.job-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background: #fff;
+    /* Good for logos with transparent backgrounds */
+    object-fit: contain;
+}
+
+.job-info h3 {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.company-name {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #bbb;
+}
+
+.job-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: #888;
+    margin: 10px 0;
+}
+
+.details-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.details-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* FOOTER STYLING */
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+}
+
+
+footer img {
+    width: 22px;
+    height: 22px;
+}
+
+.social {
+    display: flex;
+    column-gap: 8px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
+}
+
+.social a:hover {
+    background-color: #ddd;
+}
+
+.copy {
+    padding-top: .8rem;
+}

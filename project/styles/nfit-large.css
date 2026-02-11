@@ -1,0 +1,83 @@
+@media only screen and (min-width: 38rem) {
+    
+        body {
+            margin: 0;
+        }
+    
+        header {
+            grid-template-columns: 80px 1fr;
+            text-align: left;
+            padding: 1.5rem 2rem;
+        }
+    
+        header img {
+            width: 55px;
+            margin-right: 20px;
+        }
+    
+    
+        .hamburger {
+            display: none;
+        }
+    
+        nav {
+            display: block;
+            
+        }
+    
+        nav ul {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: var(--primary);
+        }
+    
+        nav a:hover {
+            background-color: var(--card);
+        }
+    
+        ul .active {
+            background-color: #6c00ba;
+        }
+    
+        nav.open {
+            flex-direction: row;
+            width: fit-content;
+            margin-top: 0;
+            gap: 60px;
+        }
+    
+        nav li .active {
+            color: var(--bg);
+        }
+
+    
+        .job-card {
+            margin: 0;
+        }
+ 
+    
+        /* FOOTER STYLING */
+
+        footer {
+            padding: 1px;
+        }
+    
+        footer .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 3rem;
+            column-gap: 10px;
+            border-radius: 8px;
+        }
+    
+        .text {
+            text-align: center;
+        }
+    
+        .social {
+            align-self: center;
+            column-gap: 19px;
+        }
+}

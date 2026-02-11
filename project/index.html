@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFIT | Find Your First Frontend Role</title>
+    <meta name="description"
+        content="Home page for the Calabar Chamber of Commerce featuring a call to action | WDD231">
+    <meta name="author" content="Agrinya Owokoni David">
+    <meta property="og:description"
+        content="Home page for the Calabar Chamber of Commerce featuring a call to action | WDD231">
+    <meta property="og:author" content="Agrinya Owokoni David">
+    <meta property="og:title" content="NFIT | Find Your First Frontend Role">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://davidokoni09.github.io/wdd231/project/images/project-logo.webp">
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/project/index.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/nfit.css">
+    <link rel="stylesheet" href="styles/nfit-large.css">
+
+    <script type="module" src="scripts/nfit.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="images/project-logo.webp" alt="website-logo" loading="lazy" width="55" height="55">
+        <div>
+            <span>NFIT</span>
+            <p>Nigeria Frontend Internship Tracker</p>
+        </div>
+
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
+
+    </header>
+
+    <nav class="navigation" id="navigation">
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#">My Tracker</a></li>
+            <li><a href="#">Resources</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="search-toggle-wrapper">
+            <button id="search-toggle" aria-label="Toggle Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <section id="search" class="search-container hidden">
+            <input type="text" placeholder="Search by tech stack (e.g. React, CSS)...">
+            <select title="location-select">
+                <option value="">Location</option>
+                <option value="lagos">Lagos</option>
+                <option value="abuja">Abuja</option>
+                <option value="remote">Remote</option>
+            </select>
+            <button class="btn-search">Search</button>
+        </section>
+
+        <section class="hero">
+            <h1>Bridge the Gap Between <span class="highlight">Learning</span> and <span class="highlight">Earning</span>.</h1>
+            <p>The centralized hub for Nigerian students to find, track, and land frontend developer internships.</p>
+            <div class="cta-group">
+                <a href="#search" class="btn-primary">Find Internships</a>
+                <a href="tracker.html" class="btn-secondary">View My Tracker</a>
+            </div>
+        </section>
+        
+        <section class="internship-feed">
+            <h2>Latest Opportunities</h2>
+            <div id="job-cards">
+            </div>
+        </section>
+
+        <dialog id="place-details">
+            <div class="dialog-content">
+                <h2 id="dialog-title"></h2>
+                <div id="dialog-description"></div>
+                <button id="close-dialog" autofocus>Close</button>
+            </div>
+        </dialog>
+        
+    </main>
+
+    <footer>
+        <div class="info">
+            <div>
+                <p>Nigeria Frontend Internship Tracker</p>
+                <p>info@nfit.ng</p>
+                <p>+234 9166648457</p>
+            </div>
+
+            <div class="social">
+                <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
+                        height="16"></a>
+
+                <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16"
+                        height="16"></a>
+
+                <a href="https://x.com"><img src="images/twitter-x.svg" alt="Twitter" width="16" height="16"></a>
+            </div>
+
+            <div class="details">
+                <p>&copy;<span id="currentyear"></span> • Agrinya Owokoni David</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+
+        <p class="text">WDD 231 Final Project | NFIT | Built for the Nigerian Tech Ecosystem</p>
+
+
+    </footer>
+</body>
+
+</html>
