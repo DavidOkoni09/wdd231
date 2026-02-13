@@ -15,7 +15,7 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: 55px auto 55px;
+    grid-template-columns: 70px auto 55px;
     background-color: var(--primary);
     align-items: center;
     color: var(--white);
@@ -40,7 +40,8 @@ header div p {
 }
 
 header img {
-    width: 55px;
+    width: 70px;
+    height: auto;
     margin-right: 20px;
 }
 

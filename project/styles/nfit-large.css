@@ -10,11 +10,6 @@
             padding: 1.5rem 2rem;
         }
     
-        header img {
-            width: 55px;
-            margin-right: 20px;
-        }
-    
     
         .hamburger {
             display: none;
@@ -36,7 +31,7 @@
         }
     
         ul .active {
-            background-color: #6c00ba;
+            background-color: #330157;
         }
     
         nav.open {

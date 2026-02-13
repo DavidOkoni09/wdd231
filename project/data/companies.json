@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Paystack",
+        "logo": "https://paystack.com/favicon.png",
+        "location": "Ikeja, Lagos",
+        "website": "https://paystack.com/careers",
+        "specialty": "Fintech / Payments"
+    },
+    {
+        "name": "Flutterwave",
+        "logo": "https://flutterwave.com/favicon.ico",
+        "location": "Lekki, Lagos",
+        "website": "https://flutterwave.com/careers",
+        "specialty": "Fintech / Infrastructure"
+    },
+    {
+        "name": "Andela",
+        "logo": "https://cdn.prod.website-files.com/660dcc7f45ad8881324199b5/66267ca5100e5bf7643aa0c9_andela-logo-white.svg",
+        "location": "Remote / Lagos",
+        "website": "https://andela.com/careers",
+        "specialty": "Software Engineering"
+    },
+    {
+        "name": "Interswitch",
+        "logo": "https://interswitchgroup.com/favicon.ico",
+        "location": "Victoria Island, Lagos",
+        "website": "https://www.interswitchgroup.com",
+        "specialty": "Transaction Processing"
+    },
+    {
+        "name": "Kuda Bank",
+        "logo": "https://www.google.com/s2/favicons?domain=kuda.com&sz=128",
+        "location": "Yaba, Lagos",
+        "website": "https://kuda.com/careers",
+        "specialty": "Digital Banking"
+    },
+    {
+        "name": "Moniepoint",
+        "logo": "https://www.google.com/s2/favicons?domain=moniepoint.com&sz=128",
+        "location": "Oyo / Lagos",
+        "website": "https://moniepoint.com/careers",
+        "specialty": "Business Banking"
+    },
+    {
+        "name": "PiggyVest",
+        "logo": "https://www.google.com/s2/favicons?domain=piggyvest.com&sz=128",
+        "location": "Victoria Island, Lagos",
+        "website": "https://www.piggyvest.com",
+        "specialty": "Savings & Investments"
+    },
+    {
+        "name": "Decagon",
+        "logo": "https://decagon.institute/favicon.ico",
+        "location": "Sangotedo, Lagos",
+        "website": "https://decagon.institute",
+        "specialty": "Tech Talent / Training"
+    },
+    {
+        "name": "Helium Health",
+        "logo": "https://heliumhealth.com/favicon.ico",
+        "location": "Lagos",
+        "website": "https://heliumhealth.com/careers",
+        "specialty": "HealthTech"
+    },
+    {
+        "name": "AltSchool Africa",
+        "logo": "https://www.google.com/s2/favicons?domain=altschoolafrica.com&sz=128",
+        "location": "Remote / Lagos",
+        "website": "https://altschoolafrica.com",
+        "specialty": "EdTech"
+    }
+]

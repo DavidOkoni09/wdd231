@@ -2,7 +2,7 @@ import { initCommonUI } from '../scripts/general.mjs';
 import { getActiveInternships, displayJobs } from '../scripts/jobs.mjs';
 
 
-const API_KEY = 'bd500a1099mshbe315bea5b1fe3fp12b8c1jsn0702b8525bf0';
+//const API_KEY = 'bd500a1099mshbe315bea5b1fe3fp12b8c1jsn0702b8525bf0';
 
 // Initialize UI (Hamburger, Year, etc)
 initCommonUI();
