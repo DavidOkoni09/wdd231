@@ -99,7 +99,7 @@ td {
     color: white;
 }
 
-.btn-primary {
+.btn-entry {
     background-color: var(--accent);
     border: 1px solid var(--card);
     font-size: 15px;
@@ -108,7 +108,7 @@ td {
     height: 30px;
 }
 
-.btn-primary:hover {
+.btn-entry:hover {
     background-color: var(--primary);
     color: var(--text);
 }
