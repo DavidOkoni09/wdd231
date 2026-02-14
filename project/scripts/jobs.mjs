@@ -6,7 +6,7 @@ export async function getTechJobs() {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '104f174575msh927c0d14843fb64p17a1f1jsn079a0e3c3779',
+            'x-rapidapi-key: fb08c36a0dmsh2ae3d97b7201ac9p172b7ajsnddaa53fb935c',
             'x-rapidapi-host': 'jsearch.p.rapidapi.com'
         }
     };
