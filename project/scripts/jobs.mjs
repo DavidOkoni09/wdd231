@@ -1,7 +1,7 @@
 // --- Data Fetching ---
 export async function getTechJobs() {
     // Optimized for Nigeria and Frontend roles
-    const url = const url = 'https://jsearch.p.rapidapi.com/search?query=frontend%20developer%20jobs%20in%20nigeria&page=1&num_pages=3&country=ng&date_posted=all';
+    const url = 'https://jsearch.p.rapidapi.com/search?query=frontend%20developer%20internships%20in%20nigeria&page=1&num_pages=3&country=ng&date_posted=all';
 
 const options = {
     method: 'GET',
