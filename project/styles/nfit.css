@@ -136,7 +136,7 @@ nav li .active {
 
 /* The hidden state */
 .hidden {
-    display: none !important;
+    display: none;
     /* Forces it to hide */
 }
 
