@@ -16,17 +16,4 @@ export function initCommonUI() {
             navigation.classList.toggle("open");
         });
     }
-
-    // Search Toggle
-    const searchToggle = document.getElementById('search-toggle');
-    const searchContainer = document.getElementById('search');
-
-    if (searchToggle && searchContainer) {
-        searchToggle.addEventListener('click', () => {
-            searchContainer.classList.toggle('hidden');
-            if (!searchContainer.classList.contains('hidden')) {
-                searchContainer.querySelector('input').focus();
-            }
-        });
-    }
 }

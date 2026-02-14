@@ -140,34 +140,6 @@ nav li .active {
     /* Forces it to hide */
 }
 
-/* Toggle button styling */
-.search-toggle-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-}
-
-#search-toggle {
-    background: var(--primary);
-    color: var(--accent);
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#search-toggle:hover {
-    transform: scale(1.1);
-}
-
-/* Optional: Animation for when it appears */
-.search-container:not(.hidden) {
-    display: flex;
-    /* Or whatever your original display was */
-    animation: slideDown 0.3s ease-out;
-}
-
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -208,17 +180,6 @@ nav li .active {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-}
-
-.search-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 2rem;
-    background: var(--card);
-    margin: -20px 1rem 0 1rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Add hover effects for buttons */
