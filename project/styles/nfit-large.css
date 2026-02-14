@@ -65,9 +65,13 @@
             border-radius: 8px;
         }
     
-        .text {
+        .present {
+            display: flex;
+            flex-flow: column-reverse;
             text-align: center;
         }
+
+        
     
         .social {
             align-self: center;

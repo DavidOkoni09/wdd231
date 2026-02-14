@@ -315,6 +315,11 @@ footer img {
     column-gap: 8px;
 }
 
+.present a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .social a {
     display: flex;
     justify-content: center;
