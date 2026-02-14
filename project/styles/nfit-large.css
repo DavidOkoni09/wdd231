@@ -30,10 +30,6 @@
             background-color: var(--card);
         }
     
-        ul .active {
-            background-color: #330157;
-        }
-    
         nav.open {
             flex-direction: row;
             width: fit-content;

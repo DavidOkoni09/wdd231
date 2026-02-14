@@ -13,6 +13,10 @@ body {
     margin: 0;
 }
 
+main {
+    margin: 10px;
+}
+
 header {
     display: grid;
     grid-template-columns: 70px auto 55px;
@@ -115,7 +119,7 @@ nav a:hover {
 }
 
 ul .active {
-    background-color: var(--primary);
+    background-color: #330157;
 }
 
 nav.open {

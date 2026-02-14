@@ -1,0 +1,69 @@
+@media only screen and (min-width: 38rem) {
+    main h1 {
+        font-size: 3rem;
+    }
+
+    header {
+        grid-template-columns: 80px 1fr;
+        text-align: left;
+        padding: 1.5rem 2rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: block;
+
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--primary);
+    }
+
+    nav a:hover {
+        background-color: var(--card);
+    }
+
+    nav.open {
+        flex-direction: row;
+        width: fit-content;
+        margin-top: 0;
+        gap: 60px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        /* Optional: requires adding data-label to HTML */
+        position: absolute;
+        left: 1rem;
+        font-weight: bold;
+        color: var(--accent);
+    }
+
+    footer {
+        padding: 1px;
+    }
+
+    footer .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0 3rem;
+        column-gap: 10px;
+        border-radius: 8px;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .social {
+        align-self: center;
+        column-gap: 19px;
+    }
+}

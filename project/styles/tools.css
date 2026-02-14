@@ -1,0 +1,310 @@
+/* --- Root Variables (Sync with your main theme) --- */
+:root {
+    --primary: #4B0082;
+    --accent: #CCFF00;
+    --bg: #121212;
+    --card: #1E1E1E;
+    --text: #E0E0E0;
+    --white: #ffffff;
+}
+
+/* --- General Reset --- */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 70px auto 55px;
+    background-color: var(--primary);
+    align-items: center;
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+}
+
+header div span {
+    display: flex;
+    justify-content: center;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header div p {
+    display: flex;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+header img {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: #fafafa;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.hamburger span,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 25px;
+    background: #fafafa;
+    margin: 5px 0;
+    transition: 0.5s ease;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span {
+    opacity: 0;
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: .4rem 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text);
+    transition: 0.5s ease;
+    border: none;
+    border-bottom: solid 1px #ddd;
+}
+
+nav li {
+    display: block;
+    border-bottom: solid 1px #eee;
+    background-color: var(--primary);
+}
+
+nav a:hover {
+    background-color: var(--card);
+}
+
+ul .active {
+    background-color: #330157;
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 30px;
+}
+
+nav li .active {
+    color: var(--bg);
+}
+
+/* The hidden state */
+.hidden {
+    display: none !important;
+    /* Forces it to hide */
+}
+
+/* Toggle button styling */
+.search-toggle-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* --- Hero Header --- */
+main>.container>header {
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2rem;
+}
+
+main h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+/* --- Section Titles --- */
+.section-title {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin: 3rem 0 1.5rem 0;
+    padding-left: 10px;
+    border-left: 5px solid var(--primary);
+}
+
+/* --- The Grid & Cards --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+
+.tag {
+    font-size: 0.7rem;
+    font-weight: bold;
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    margin: 0 0 1rem 0;
+    color: var(--accent);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    flex-grow: 1;
+    /* Pushes the link to the bottom */
+}
+
+.card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Table --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Clips the corners of the inner rows */
+}
+
+th,
+td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+td a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+}
+
+
+footer img {
+    width: 22px;
+    height: 22px;
+}
+
+.social {
+    display: flex;
+    column-gap: 8px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
+}
+
+.social a:hover {
+    background-color: #ddd;
+}
+
+.copy {
+    padding-top: .8rem;
+}

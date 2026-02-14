@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFIT | Find Your First Frontend Role</title>
+    <title>NFIT | Track Your Applications and Progress on Jobs</title>
     <meta name="description"
-        content="Home page for the Nigeria Frontend Internship Tracker featuring a call to action and a short job list. | WDD231">
+        content="Tracker Page to view saved job listings and schedule job applications, interviews etc. | WDD231">
     <meta name="author" content="Agrinya Owokoni David">
     <meta property="og:description"
-        content="Home page for the Nigeria Frontend Internship Tracker featuring a call to action and a short job list. | WDD231">
+        content="Tracker Page to view saved job listings and schedule job applications, interviews etc. | WDD231">
     <meta property="og:author" content="Agrinya Owokoni David">
-    <meta property="og:title" content="NFIT | Find Your First Frontend Role">
+    <meta property="og:title" content="NFIT | Track Your Applications and Progress on Jobs.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://davidokoni09.github.io/wdd231/project/images/project-logo.webp">
-    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/project/index.html">
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/project/tracker.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,15 +31,17 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/nfit.css">
+    <link rel="stylesheet" href="styles/tracker.css">
     <link rel="stylesheet" href="styles/nfit-large.css">
+    <link rel="stylesheet" href="styles/tracker-large.css">
 
-    <script type="module" src="scripts/nfit.js"></script>
+    <script src="scripts/tracker.js" defer></script>
 
 </head>
 
 <body>
     <header>
-        <img src="images/project-logo.webp" alt="website-logo" loading="lazy">
+        <img src="images/project-logo.webp" alt="website-logo" loading="lazy" width="55" height="55">
         <div>
             <span>NFIT</span>
             <p>Nigeria Frontend Internship Tracker</p>
@@ -51,58 +53,60 @@
 
     <nav class="navigation" id="navigation">
         <ul>
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="tracker.html">My Tracker</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="tracker.html">My Tracker</a></li>
             <li><a href="resources.html">Resources</a></li>
         </ul>
     </nav>
 
     <main>
-
-        <div class="search-toggle-wrapper">
-            <button id="search-toggle" aria-label="Toggle Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
+        <section class="tracker-header">
+            <h1>My Application <span class="highlight">Tracker</span></h1>
+            <div class="stats-bar">
+                <p>Total Saved: <span id="total-count">0</span></p>
+            </div>
+            <button id="open-form-btn" class="btn-primary">+ Add Manual Entry</button>
+        </section>
+        
+        <div class="table-wrapper">
+            <table id="jobs-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tracker-body">
+                </tbody>
+            </table>
         </div>
-        
-        <section id="search" class="search-container hidden">
-            <input type="text" placeholder="Search by tech stack (e.g. React, CSS)...">
-            <select title="location-select">
-                <option value="">Location</option>
-                <option value="lagos">Lagos</option>
-                <option value="abuja">Abuja</option>
-                <option value="remote">Remote</option>
-            </select>
-            <button class="btn-search">Search</button>
-        </section>
 
-        <section class="hero">
-            <h1>Bridge the Gap Between <span class="highlight">Learning</span> and <span class="highlight">Earning</span>.</h1>
-            <p>The centralized hub for Nigerian students to find, track, and land frontend developer internships.</p>
-            <div class="cta-group">
-                <a href="#search" class="btn-primary">Find Internships</a>
-                <a href="tracker.html" class="btn-secondary">View My Tracker</a>
-            </div>
-        </section>
+        <section class="form-container">
+            <h2>Add New Application</h2>
+            <form id="add-job-form" method="get" action="thankyou.html">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" required placeholder="e.g. Paystack">
         
-        <section class="internship-feed">
-            <h2>Latest Opportunities</h2>
-            <div id="job-cards">
-            </div>
-        </section>
-
-        <dialog id="place-details">
-            <div class="dialog-content">
-                <h2 id="dialog-title"></h2>
-                <div id="dialog-description"></div>
-                <button id="close-dialog" autofocus>Close</button>
-            </div>
-        </dialog>
+                <label for="role">Job Title</label>
+                <input type="text" id="role" name="role" required placeholder="e.g. Frontend Intern">
         
+                <label for="date">Application Date</label>
+                <input type="date" id="date" name="date" required>
+        
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="Interested">Interested</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interviewing">Interviewing</option>
+                    <option value="Offer">Offer</option>
+                </select>
+        
+                <button type="submit" class="btn-primary">Log Application</button>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -114,8 +118,8 @@
             </div>
 
             <div class="social">
-                <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
-                        height="16"></a>
+                <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn"
+                        width="16" height="16"></a>
 
                 <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16"
                         height="16"></a>
@@ -130,8 +134,6 @@
         </div>
 
         <p class="text">WDD 231 Final Project | NFIT | Built for the Nigerian Tech Ecosystem</p>
-
-
     </footer>
 </body>
 

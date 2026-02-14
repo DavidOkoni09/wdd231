@@ -5,203 +5,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Learning Roadmap 2026</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #64748b;
-            --dark: #0f172a;
-            --light: #f8fafc;
-        }
+    <meta name="description"
+        content="Tools from the resources page| Links and outlines. | WDD231">
+    <meta name="author" content="Agrinya Owokoni David">
+    <meta property="og:description"
+        content="Tools from the resources page| Links and outlines. | WDD231">
+    <meta property="og:author" content="Agrinya Owokoni David">
+    <meta property="og:title" content="Frontend Learning Roadmap 2026">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://davidokoni09.github.io/wdd231/project/images/project-logo.webp">
+    <meta property="og:url" content="https://davidokoni09.github.io/wdd231/project/tools.html">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            margin: 0;
-            padding: 20px;
-        }
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/tools.css">
+    <link rel="stylesheet" href="styles/tools-large.css">
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
+    <script src="scripts/tools.js" defer></script>
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .section-title {
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            margin: 40px 0 20px;
-            color: var(--dark);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            margin-top: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th,
-        td {
-            text-align: left;
-            padding: 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--secondary);
-        }
-
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <header>
+        <img src="images/project-logo.webp" alt="website-logo" loading="lazy" width="55" height="55">
+        <div>
+            <span>NFIT</span>
+            <p>Nigeria Frontend Internship Tracker</p>
+        </div>
+    
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
+    
+    </header>
+    
+    <nav class="navigation" id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tracker.html">My Tracker</a></li>
+            <li><a href="resources.html">Resources</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        <header>
-            <h1>Frontend Development Roadmap</h1>
-            <p>Master the Modern Web Stack (2026 Edition)</p>
-        </header>
-
-        <h2 class="section-title">1. The Foundations</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="tag">FREE</span>
-                <h3>freeCodeCamp</h3>
-                <p>Project-based certifications in Responsive Web Design and JS.</p>
-                <a href="https://www.freecodecamp.org/" target="_blank">Start Learning →</a>
+    <main>
+        <div class="container">
+            <div>
+                <h1>Frontend Development Roadmap</h1>
+                <p>Master the Modern Web Stack (2026 Edition)</p>
             </div>
-            <div class="card">
-                <span class="tag">FREE</span>
-                <h3>The Odin Project</h3>
-                <p>Full-stack curriculum focused on real-world dev environment setup.</p>
-                <a href="https://www.theodinproject.com/" target="_blank">Start Learning →</a>
+        
+            <h2 class="section-title">1. The Foundations</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag">FREE</span>
+                    <h3>freeCodeCamp</h3>
+                    <p>Project-based certifications in Responsive Web Design and JS.</p>
+                    <a href="https://www.freecodecamp.org/" target="_blank">Start Learning →</a>
+                </div>
+                <div class="card">
+                    <span class="tag">FREE</span>
+                    <h3>The Odin Project</h3>
+                    <p>Full-stack curriculum focused on real-world dev environment setup.</p>
+                    <a href="https://www.theodinproject.com/" target="_blank">Start Learning →</a>
+                </div>
+                <div class="card">
+                    <span class="tag">REFERENCE</span>
+                    <h3>MDN Web Docs</h3>
+                    <p>The definitive guide to HTML, CSS, and JavaScript standards.</p>
+                    <a href="https://developer.mozilla.org/" target="_blank">Explore Docs →</a>
+                </div>
             </div>
-            <div class="card">
-                <span class="tag">REFERENCE</span>
-                <h3>MDN Web Docs</h3>
-                <p>The definitive guide to HTML, CSS, and JavaScript standards.</p>
-                <a href="https://developer.mozilla.org/" target="_blank">Explore Docs →</a>
+        
+            <h2 class="section-title">2. Frameworks & Meta-Frameworks</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Best Resource</th>
+                        <th>Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>React</strong></td>
+                        <td><a href="https://react.dev/">React.dev</a></td>
+                        <td>Interactive documentation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Next.js</strong></td>
+                        <td><a href="https://nextjs.org/learn">Next.js Learn</a></td>
+                        <td>Server-side rendering & Optimization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TypeScript</strong></td>
+                        <td><a href="https://www.typescriptlang.org/">TS Handbook</a></td>
+                        <td>Type safety at scale</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h2 class="section-title">3. Professional Mastery</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag">PAID</span>
+                    <h3>Frontend Masters</h3>
+                    <p>Deep-dive courses from industry experts on advanced topics.</p>
+                    <a href="https://frontendmasters.com/" target="_blank">View Courses →</a>
+                </div>
+                <div class="card">
+                    <span class="tag">CERTIFICATE</span>
+                    <h3>Meta Professional Certificate</h3>
+                    <p>A comprehensive career-ready program hosted on Coursera.</p>
+                    <a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" target="_blank">View
+                        Program →</a>
+                </div>
+                <div class="card">
+                    <span class="tag">PRACTICE</span>
+                    <h3>Frontend Mentor</h3>
+                    <p>Improve your skills by building real projects from Figma designs.</p>
+                    <a href="https://www.frontendmentor.io/" target="_blank">Take a Challenge →</a>
+                </div>
             </div>
         </div>
+    </main>
 
-        <h2 class="section-title">2. Frameworks & Meta-Frameworks</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Technology</th>
-                    <th>Best Resource</th>
-                    <th>Focus</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>React</strong></td>
-                    <td><a href="https://react.dev/">React.dev</a></td>
-                    <td>Interactive documentation</td>
-                </tr>
-                <tr>
-                    <td><strong>Next.js</strong></td>
-                    <td><a href="https://nextjs.org/learn">Next.js Learn</a></td>
-                    <td>Server-side rendering & Optimization</td>
-                </tr>
-                <tr>
-                    <td><strong>TypeScript</strong></td>
-                    <td><a href="https://www.typescriptlang.org/">TS Handbook</a></td>
-                    <td>Type safety at scale</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="section-title">3. Professional Mastery</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="tag">PAID</span>
-                <h3>Frontend Masters</h3>
-                <p>Deep-dive courses from industry experts on advanced topics.</p>
-                <a href="https://frontendmasters.com/" target="_blank">View Courses →</a>
+    <footer>
+        <div class="info">
+            <div>
+                <p>Nigeria Frontend Internship Tracker</p>
+                <p>info@nfit.ng</p>
+                <p>+234 9166648457</p>
             </div>
-            <div class="card">
-                <span class="tag">CERTIFICATE</span>
-                <h3>Meta Professional Certificate</h3>
-                <p>A comprehensive career-ready program hosted on Coursera.</p>
-                <a href="https://www.coursera.org/professional-certificates/meta-front-end-developer"
-                    target="_blank">View Program →</a>
+        
+            <div class="social">
+                <a href="https://linkedin.com/in/owokoni-agrinya"><img src="images/linkedin.svg" alt="LinkedIn" width="16"
+                        height="16"></a>
+        
+                <a href="https://github.com/DavidOkoni09"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+        
+                <a href="https://x.com"><img src="images/twitter-x.svg" alt="Twitter" width="16" height="16"></a>
             </div>
-            <div class="card">
-                <span class="tag">PRACTICE</span>
-                <h3>Frontend Mentor</h3>
-                <p>Improve your skills by building real projects from Figma designs.</p>
-                <a href="https://www.frontendmentor.io/" target="_blank">Take a Challenge →</a>
+        
+            <div class="details">
+                <p>&copy;<span id="currentyear"></span> • Agrinya Owokoni David</p>
+                <p id="lastModified"></p>
             </div>
         </div>
+        
+        <p class="text">WDD 231 Final Project | NFIT | Built for the Nigerian Tech Ecosystem</p>
 
-        <footer style="margin-top: 50px; text-align: center; color: var(--secondary); font-size: 0.9rem;">
-            <p>Keep building. The web is your canvas.</p>
-        </footer>
-    </div>
-
+    </footer>
 </body>
 
 </html>

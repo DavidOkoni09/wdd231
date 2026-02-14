@@ -1,8 +1,5 @@
 import { initCommonUI } from '../scripts/general.mjs';
-import { getActiveInternships, displayJobs } from '../scripts/jobs.mjs';
-
-
-//const API_KEY = 'bd500a1099mshbe315bea5b1fe3fp12b8c1jsn0702b8525bf0';
+import { getTechJobs, displayJobs } from '../scripts/jobs.mjs';
 
 // Initialize UI (Hamburger, Year, etc)
 initCommonUI();
@@ -16,22 +13,16 @@ if (modal && closeBtn) {
 }
 
 async function init() {
+    const container = document.querySelector('#job-cards');
+
     try {
-        const jobs = await getActiveInternships(API_KEY);
-        // This API returns the array directly, so no need for jobs.data
-        if (jobs && Array.isArray(jobs)) {
-            displayJobs(jobs);
-        } else {
-            throw new Error("Invalid data format received.");
-        }
+        const jobs = await getTechJobs();
+        displayJobs(jobs);
     } catch (err) {
-        console.error("Init Error:", err.message);
-        const container = document.querySelector('#job-cards');
         if (container) {
-            container.innerHTML = `<p class="error">Failed to load internships: ${err.message}</p>`;
+            container.innerHTML = `<p class="error">Unable to load jobs. Check your API key or connection.</p>`;
         }
     }
 }
 
 init();
-

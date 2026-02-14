@@ -1,11 +1,13 @@
 // --- Data Fetching ---
-export async function getActiveInternships(apiKey) {
-    const url = 'https://internships-api.p.rapidapi.com/active-jb-7d?location_filter=Nigeria';
+export async function getTechJobs() {
+    // Optimized for Nigeria and Frontend roles
+    const url = 'https://jsearch.p.rapidapi.com/search?query=frontend%20developer%20internship%20in%20nigeria&page=1&num_pages=3&country=ng&date_posted=all';
+
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': apiKey,
-            'x-rapidapi-host': 'internships-api.p.rapidapi.com'
+            'x-rapidapi-key': '104f174575msh927c0d14843fb64p17a1f1jsn079a0e3c3779',
+            'x-rapidapi-host': 'jsearch.p.rapidapi.com'
         }
     };
 
@@ -14,52 +16,50 @@ export async function getActiveInternships(apiKey) {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const responseData = await response.json();
-
-        // This API typically returns the array directly.
-        // We'll log it to be sure, then return it.
-        console.log("Internships-API Raw Data:", responseData);
-        return responseData;
+        return responseData.data; // JSearch nests results in 'data'
     } catch (error) {
-        console.error('Error fetching internships:', error);
+        console.error('JSearch Fetch Error:', error);
         throw error;
     }
 }
 
-// --- Display Cards ---
-export function displayJobs(jobsArray) {
+// Display Cards 
+export function displayJobs(jobs) {
     const container = document.querySelector('#job-cards');
-    if (!container) return;
-
     container.innerHTML = "";
-    const displayList = jobsArray.slice(0, 15);
 
-    displayList.forEach(job => {
+    // Requirement: Display at least 15 items (JSearch usually returns 10 per page, 
+    // you might need to increase num_pages to 2 in the URL for exactly 15+)
+    jobs.forEach(job => {
         const card = document.createElement('section');
         card.className = 'job-card';
 
-        // NEW KEYS: organization_logo, title, organization, locations_derived
-        const logoUrl = job.organization_logo ? job.organization_logo : 'images/logo-placeholder.webp';
-
-        // Handling location (API returns an array of objects)
-        const location = job.locations_derived && job.locations_derived.length > 0
-            ? `${job.locations_derived[0]}`
-            : 'Remote / Nigeria';
+        const logo = job.employer_logo ? job.employer_logo : 'images/logo-placeholder.webp';
 
         card.innerHTML = `
-            <img src="${logoUrl}" alt="${job.organization} logo" class="job-logo" loading="lazy">
+            <img src="${logo}" alt="${job.employer_name} logo" class="job-logo" loading="lazy">
             <div class="job-info">
-                <h3>${job.title}</h3> <p class="company-name">${job.organization}</p> <div class="job-meta">
-                    <span>📍 ${location}</span> <span>⏳ ${new Date(job.date_posted).toLocaleDateString()}</span> </div>
-                <button class="details-btn">View Details</button>
+                <h3>${job.job_title}</h3>
+                <p class="company-name">${job.employer_name}</p>
+                <div class="job-meta">
+                    <span>📍 ${job.job_city || 'Remote'}, ${job.job_state || 'Nigeria'}</span>
+                </div>
+                <div class="card-btns">
+                    <button class="details-btn">Details</button>
+                </div>
             </div>
         `;
 
-        card.querySelector('.details-btn').addEventListener('click', () => showJobModal(job));
+        // Event Listener for Saving
+        card.querySelector('.details-btn').addEventListener('click', () => {
+            showJobModal(job);
+        });
+
         container.appendChild(card);
     });
 }
 
-// --- Modal Logic ---
+// Modal Logic
 function showJobModal(job) {
     const dialog = document.querySelector('#place-details');
     const title = document.querySelector('#dialog-title');
@@ -67,44 +67,66 @@ function showJobModal(job) {
 
     if (!dialog) return;
 
-    title.textContent = job.title;
+    // JSearch uses job_title
+    title.textContent = job.job_title;
 
-    // Formatting descriptions (this API uses description_text)
-    const jobDesc = job.linkedin_org_description ? job.linkedin_org_description.replace(/\n/g, '<br>') : "No description provided.";
+    // JSearch uses job_description
+    const jobDesc = job.job_description
+        ? job.job_description.replace(/\n/g, '<br>')
+        : "No description provided.";
 
     desc.innerHTML = `
         <div class="modal-header">
-            <p><strong>Company:</strong> ${job.organization}</p>
-            <p><strong>Type:</strong> ${job.employment_type ? job.employment_type.join(", ") : 'Internship'}</p>
+            <p><strong>Company:</strong> ${job.employer_name}</p>
+            <p><strong>Type:</strong> ${job.job_employment_type || 'N/A'}</p>
+            <p><strong>Location:</strong> ${job.job_city ? job.job_city + ', ' + job.job_country : 'Remote'}</p>
         </div>
         <hr>
-        <div class="job-description-content">
+        <div class="job-description-content" style="max-height: 300px; overflow-y: auto; margin: 1rem 0;">
             ${jobDesc}
         </div>
         <div class="modal-actions">
-            <a href="${job.url}" target="_blank" class="apply-btn">Apply Now</a>
+            <a href="${job.job_apply_link}" target="_blank" class="apply-btn">Apply Now</a>
             <button id="save-to-tracker" class="save-btn">Save to Tracker</button>
         </div>
     `;
 
     dialog.showModal();
-    document.querySelector('#save-to-tracker').addEventListener('click', () => saveJob(job));
+
+    const saveBtn = document.querySelector('#save-to-tracker');
+    saveBtn.onclick = () => {
+        saveToTracker(job);
+        // Optional: Close modal after saving
+        // dialog.close(); 
+    };
 }
 
-// --- Local Storage Logic (Uses 'id' or 'url' as unique key) ---
-function saveJob(job) {
+function saveToTracker(job) {
     let savedJobs = JSON.parse(localStorage.getItem('nfit-saved-jobs')) || [];
-    const isAlreadySaved = savedJobs.some(item => item.id === job.id);
+
+    // Check for duplicates using JSearch's unique job_id
+    const isAlreadySaved = savedJobs.some(item => (item.id === job.job_id));
 
     if (!isAlreadySaved) {
-        savedJobs.push(job);
+        // We create a standard object that matches your tracker.html table
+        const standardizedJob = {
+            id: job.job_id,
+            company: job.employer_name,
+            role: job.job_title,
+            // Format the date nicely
+            date: job.job_posted_at_datetime_utc
+                ? new Date(job.job_posted_at_datetime_utc).toLocaleDateString()
+                : "Recent",
+            status: "Saved",
+            link: job.job_apply_link
+        };
+
+        savedJobs.push(standardizedJob);
         localStorage.setItem('nfit-saved-jobs', JSON.stringify(savedJobs));
-        alert(`${job.title} saved to tracker!`);
+        alert(`${standardizedJob.role} has been saved!`);
     } else {
-        alert("Already saved.");
+        alert("This job is already in your tracker.");
     }
 }
-
-
 
 
